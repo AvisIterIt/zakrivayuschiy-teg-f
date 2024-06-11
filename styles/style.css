@@ -162,6 +162,7 @@
   text-shadow: -1px 0 var(--label-color), 0 1px var(--label-color),
     1px 0 var(--label-color), 0 -1px var(--label-color);
   opacity: 50%;
+  z-index: 1;
 }
 
 @supports (text-stroke: 1px var(--label-color)) or
