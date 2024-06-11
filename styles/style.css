@@ -164,6 +164,15 @@
   opacity: 50%;
 }
 
+@supports (text-stroke: 1px var(--label-color)) or
+  (-webkit-text-stroke: 1px var(--label-color)) {
+  .label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--label-color);
+    text-stroke: 1px var(--label-color);
+  }
+}
+
 .content {
   padding: 25px 27px 20px 28px;
   display: flex;
@@ -403,14 +412,11 @@
 
   .save {
     gap: 12px;
+    flex-direction: column;
+    width: 82%;
   }
 
   .button {
     width: 56%;
-  }
-
-  .save {
-    flex-direction: column;
-    width: 82%;
   }
 }
