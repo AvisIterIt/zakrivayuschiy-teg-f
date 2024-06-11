@@ -158,11 +158,14 @@
   right: 25px;
   top: 31px;
   mix-blend-mode: hard-light;
-  text-transform: uppercase;
   text-shadow: -1px 0 var(--label-color), 0 1px var(--label-color),
     1px 0 var(--label-color), 0 -1px var(--label-color);
   opacity: 50%;
   z-index: 1;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 @supports (text-stroke: 1px var(--label-color)) or
