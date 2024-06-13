@@ -1,39 +1,25 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --page-background: #fff;
-    --text-color: #000;
-    --background-gradient: #d3d3d3;
-    --intensity-start: #e7e7e7;
-    --intensity-end: #1a1a1a;
-    --accent-color: #000;
-    --font-inter: "inter", sans-serif;
-    --font-PressStart2P: "Press Start 2P", sans-serif;
-    --text-font-weight: "weight" 400;
-    --title-font-weight: "weight" 700;
-    --label-color: #fff;
-    --contour-heart: #000;
-    --heart-color-red: #ff0000;
-    --color-mix: #fff;
-  }
+/* Переменные с общим значением */
+
+:root {
+  --accent-font: "PressStart2P", fantasy;
+  --main-font: "inter", sans-serif;
+  --heart-color-red: #ff0000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page-background: #000;
-    --text-color: #00cc14;
-    --background-gradient: #000;
-    --intensity-start: #007f0c;
-    --intensity-end: #004306;
-    --accent-color: #00cc14;
-    --font-inter: "inter", sans-serif;
-    --font-PressStart2P: "Press Start 2P", sans-serif;
-    --text-font-weight: "weight" 400;
-    --title-font-weight: "weight" 700;
-    --label-color: #000;
-    --contour-heart: #00cc14;
-    --heart-color-red: #ff0000;
-    --color-mix: #00cc14;
-  }
+/* Переменные основной темы (Ligth) */
+
+:root {
+  --page-background: #fff;
+  --text-color: #000;
+  --background-gradient: #d3d3d3;
+  --intensity-start: #e7e7e7;
+  --intensity-end: #1a1a1a;
+  --accent-color: #000;
+  --text-font-weight: "wght" 400;
+  --title-font-weight: "wght" 700;
+  --label-color: #fff;
+  --contour-heart: #000;
+  --color-mix: #fff;
 }

@@ -16,7 +16,7 @@
 
 .page {
   font-variation-settings: var(--text-font-weight);
-  font-family: var(--font-inter);
+  font-family: var(--main-font);
   min-inline-size: 320px;
   min-block-size: 100dvb;
   color: var(--text-color);
@@ -39,33 +39,34 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0 auto;
 }
 
 .header {
   margin: 100px 0 105px 0;
-  padding: 136px 120px 22px;
+  padding: 136px 0 14px;
   background-color: var(--page-background);
-  font-family: var(--font-PressStart2P);
+  font-family: var(--accent-font);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
   outline: 2px solid var(--accent-color);
+  width: 99%;
 }
 
 .header-main {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 1;
 }
 
 .header-minor {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  padding-top: 20px;
+  margin-top: 20px;
+  line-height: 1;
 }
 
 .theme-menu {
-  font-size: 14px;
-  padding: 25px 0 0 15px;
+  padding: 25px 0 0 7px;
   background-color: transparent;
 }
 
@@ -74,7 +75,6 @@
 }
 
 .theme-menu__item {
-  padding-bottom: 10px;
   position: relative;
 }
 
@@ -83,13 +83,30 @@
 }
 
 .theme-menu__button {
+  font-size: 14px;
+  line-height: 1;
+  appearance: none;
   text-transform: uppercase;
   background-color: transparent;
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
   overflow: hidden;
-  padding-left: 0;
+  padding: 0 0 10px 0;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .theme-menu__button::after {
@@ -115,27 +132,29 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  left: -15px;
+  left: -19px;
+  top: 3px;
+  animation: triangle-pull 0.5s ease-in-out infinite alternate;
 }
 
 .section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 52px;
+  gap: 53px;
   align-items: center;
 }
 
 .post {
-  width: 48.5%;
   background-color: var(--page-background);
   outline: 2px solid var(--accent-color);
 }
 
 .title {
+  line-height: 21.78px;
   font-size: 18px;
   font-variation-settings: var(--title-font-weight);
-  padding: 3px 10px;
+  padding: 3px 12px;
   border-bottom: 2px solid var(--accent-color);
 }
 
@@ -154,18 +173,15 @@
 .label {
   position: absolute;
   font-size: 14px;
-  font-family: var(--font-PressStart2P);
-  right: 25px;
-  top: 31px;
+  line-height: 1;
+  font-family: var(--accent-font);
+  right: 26px;
+  top: 25px;
   mix-blend-mode: hard-light;
   text-shadow: -1px 0 var(--label-color), 0 1px var(--label-color),
     1px 0 var(--label-color), 0 -1px var(--label-color);
   opacity: 50%;
   z-index: 1;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 @supports (text-stroke: 1px var(--label-color)) or
@@ -178,30 +194,33 @@
 }
 
 .content {
+  font-size: 18px;
+  line-height: 21px;
   padding: 25px 27px 20px 28px;
   display: flex;
   flex-direction: column;
+  gap: 23.5px;
   line-height: 21px;
-  letter-spacing: 1px;
   border-top: 2px solid var(--accent-color);
-}
-
-.discription {
-  padding: 30px 0 0 0;
 }
 
 .button-container {
   display: flex;
   align-items: center;
   justify-content: end;
-  margin: 20px 0 0 30%;
-  gap: 2px;
+  margin: 0 0 0 30%;
 }
 
 .card__icon-button {
+  appearance: none;
   background-color: transparent;
   border: none;
   padding-top: 7px;
+  transition: outline 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
 }
 
 .card__icon-button:focus-visible {
@@ -209,18 +228,24 @@
 }
 
 .button {
+  appearance: none;
   background-color: transparent;
-  width: 28.5%;
+  width: 130px;
   padding: 7px 0;
   outline: 2px solid var(--accent-color);
   border: none;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button:focus-visible {
-  box-shadow: 4px 4px 0px 0px var(--accent-color);
+  box-shadow: 2px 2px 0px 0px var(--accent-color);
 }
 
 .button::before {
@@ -243,7 +268,9 @@
 }
 
 .button__text {
-  font-family: var(--font-PressStart2P);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 12.6px;
   z-index: 1;
   position: relative;
   color: var(--color-mix);
@@ -252,7 +279,7 @@
 
 .save {
   font-size: 14px;
-  width: 23.5%;
+  width: 335px;
   padding: 15px 20px;
   margin: 0 auto;
   display: flex;
@@ -270,71 +297,15 @@
   mix-blend-mode: difference;
 }
 
-.like-icon {
-  cursor: pointer;
-}
-
-.like-icon .heart {
-  transform-origin: center center;
-}
-
-.like-icon .main-body {
-  fill: var(--page-background);
-  transition: fill 0.3s 0.05s;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--accent-color);
-}
-
-.like-icon:active .main-body {
-  fill: var(--heart-color-red);
-}
-
-.like-icon .core {
-  fill: var(--page-background);
-  transition: fill 0.3s;
-}
-
-.like-icon:hover .core {
-  fill: var(--accent-color);
-}
-
-.like-icon:active .core {
-  fill: var(--heart-color-red);
-}
-
-.like-icon.is-liked {
-  transition: fill 0.3s 0.06s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-color-red);
-}
-
-.like-icon.is-liked .core {
-  fill: var(--heart-color-red);
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-color-red);
-}
-
-.like-icon .sparks {
-  opacity: 0;
-}
-
 .dialog {
   background-color: var(--page-background);
   color: var(--accent-color);
-  font-size: var(--font-PressStart2P);
+  font-size: var(--accent-font);
   max-width: 353px;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
-  backdrop-filter: blur(7px);
 }
 
 .dialog-container {
@@ -355,15 +326,17 @@
 }
 
 .dialog-button.button {
+  text-transform: uppercase;
   margin-top: 20px;
   width: 100%;
 }
 
 .dialog-text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 12.6px;
   display: flex;
   align-items: center;
-  font-family: var(--font-PressStart2P);
-  font-size: 14px;
 }
 
 .img-grayscale {
@@ -398,11 +371,11 @@
 @media (width <= 375px) {
   .header {
     margin: 103px 0 105px 0;
-    padding: 120px 14px 22px;
+    padding: 120px 0 12px;
   }
 
   .section {
-    gap: 55px;
+    gap: 57px;
   }
 
   .post {
@@ -411,13 +384,13 @@
 
   .label {
     right: 10px;
-    top: 28px;
+    top: 23px;
   }
 
-  .save {
+  .save.button {
     gap: 12px;
     flex-direction: column;
-    width: 82%;
+    width: 306px;
   }
 
   .button {
