@@ -1,16 +1,9 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
-/* Переменные с общим значением */
-
 :root {
   --accent-font: "PressStart2P", fantasy;
   --main-font: "inter", sans-serif;
   --heart-color-red: #ff0000;
-}
-
-/* Переменные основной темы (Ligth) */
-
-:root {
   --page-background: #fff;
   --text-color: #000;
   --background-gradient: #d3d3d3;

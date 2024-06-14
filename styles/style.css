@@ -200,7 +200,6 @@
   display: flex;
   flex-direction: column;
   gap: 23.5px;
-  line-height: 21px;
   border-top: 2px solid var(--accent-color);
 }
 
@@ -334,7 +333,8 @@
 .dialog-text {
   font-family: var(--accent-font);
   font-size: 14px;
-  line-height: 12.6px;
+  line-height: 21px;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
 }
@@ -395,5 +395,10 @@
 
   .button {
     width: 56%;
+  }
+
+  .floppy {
+    width: 28px;
+    height: 28px;
   }
 }
